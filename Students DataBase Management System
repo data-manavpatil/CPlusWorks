@@ -4,7 +4,8 @@
 
 using namespace std;
 
-class Student {
+class Student 
+{
 private:
     string fullName;
     string className;
@@ -19,13 +20,15 @@ private:
 
 public:
     // Constructor
-    Student(string fName, string cName, string sec, int roll, string cId, string sub[], int a, char g, string mob, string email) {
+    Student(string fName, string cName, string sec, int roll, string cId, string sub[], int a, char g, string mob, string email) 
+	{
         fullName = fName;
         className = cName;
         section = sec;
         rollNumber = roll;
         collegeId = cId;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) 
+		{
             subjects[i] = sub[i];
         }
         age = a;
@@ -35,14 +38,16 @@ public:
     }
 
     // Display student details
-    void display() {
+    void display() 
+	{
         cout << "Full Name: " << fullName << endl;
         cout << "Class: " << className << endl;
         cout << "Section: " << section << endl;
         cout << "Roll Number: " << rollNumber << endl;
         cout << "College ID: " << collegeId << endl;
         cout << "Subjects: ";
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) 
+		{
             cout << subjects[i] << " ";
         }
         cout << endl;
@@ -53,11 +58,13 @@ public:
     }
 
     // Getters
-    int getRollNumber() {
+    int getRollNumber() 
+	{
         return rollNumber;
     }
 
-    string getEmailId() {
+    string getEmailId() 
+	{
         return emailId;
     }
 
@@ -66,7 +73,8 @@ public:
         fullName = newName;
         section = newSection;
         collegeId = newCollegeId;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) 
+		{
             subjects[i] = newSubjects[i];
         }
         age = newAge;
@@ -78,7 +86,8 @@ public:
 };
 
 // Function to add a new student to the database
-void addStudent(vector<Student> &students) {
+void addStudent(vector<Student> &students) 
+{
     string fName, cName, sec, cId, sub[5], email, mob;
     int roll, age;
     char gender;
@@ -94,7 +103,8 @@ void addStudent(vector<Student> &students) {
     cout << "Enter College ID: ";
     getline(cin, cId);
     cout << "Enter Subjects (separate by space): ";
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++) 
+	{
         cin >> sub[i];
     }
     cout << "Enter Age: ";
@@ -110,50 +120,61 @@ void addStudent(vector<Student> &students) {
 }
 
 // Function to search for a student by roll number
-void searchStudent(vector<Student> &students) {
+void searchStudent(vector<Student> &students) 
+{
     int roll;
     cout << "Enter Roll Number to Search: ";
     cin >> roll;
     bool found = false;
-    for (Student &student : students) {
-        if (student.getRollNumber() == roll) {
+    for (Student &student : students) 
+	{
+        if (student.getRollNumber() == roll) 
+		{
             student.display();
             found = true;
             break;
         }
     }
-    if (!found) {
+    if (!found) 
+	{
         cout << "Student with Roll Number " << roll << " not found!" << endl;
     }
 }
 
 // Function to delete a student by email ID
-void deleteStudent(vector<Student> &students) {
+void deleteStudent(vector<Student> &students) 
+{
     string email;
     cout << "Enter Email ID to Delete: ";
     cin >> email;
     bool found = false;
-    for (auto it = students.begin(); it != students.end(); ++it) {
-        if (it->getEmailId() == email) {
+    for (auto it = students.begin(); it != students.end(); ++it) 
+	{
+        if (it->getEmailId() == email) 
+		{
             students.erase(it);
             cout << "Student with Email ID " << email << " deleted successfully!" << endl;
             found = true;
             break;
         }
     }
-    if (!found) {
+    if (!found) 
+	{
         cout << "Student with Email ID " << email << " not found!" << endl;
     }
 }
 
 // Function to edit student details
-void editStudent(vector<Student> &students) {
+void editStudent(vector<Student> &students) 
+{
     string email;
     cout << "Enter Email ID to Edit: ";
     cin >> email;
     bool found = false;
-    for (Student &student : students) {
-        if (student.getEmailId() == email) {
+    for (Student &student : students) 
+	{
+        if (student.getEmailId() == email) 
+		{
             string newName, newSection, newCollegeId, newSubjects[5], newEmail, newMobile;
             int newAge;
             char newGender;
@@ -164,7 +185,8 @@ void editStudent(vector<Student> &students) {
             cout << "Enter New College ID: ";
             getline(cin, newCollegeId);
             cout << "Enter New Subjects (separate by space): ";
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 5; i++) 
+			{
                 cin >> newSubjects[i];
             }
             cout << "Enter New Age: ";
@@ -180,14 +202,17 @@ void editStudent(vector<Student> &students) {
             break;
         }
     }
-    if (!found) {
+    if (!found) 
+	{
         cout << "Student with Email ID " << email << " not found!" << endl;
     }
 }
 
 // Function to view all students details
-void viewAllStudents(vector<Student> &students) {
-    if (students.empty()) {
+void viewAllStudents(vector<Student> &students) 
+{
+    if (students.empty()) 
+	{
         cout << "No students in the database!" << endl;
         return;
     }
@@ -198,10 +223,12 @@ void viewAllStudents(vector<Student> &students) {
     }
 }
 
-int main() {
+int main() 
+{
     vector<Student> students;
     int choice;
-    do {
+    do 
+	{
         cout << "\n***** Student Database Management System *****\n";
         cout << "1. View All Students List\n";
         cout << "2. Search Student\n";
@@ -212,7 +239,8 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
         cin.ignore(); // Ignore newline character
-        switch (choice) {
+        switch (choice) 
+		{
             case 1:
                 viewAllStudents(students);
                 break;
