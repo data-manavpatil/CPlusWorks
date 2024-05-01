@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 // Function to display a question and get the user's answer
-int askQuestion(const char *question, const char *option1, const char *option2, const char *option3) {
+int askQuestion(const char *question, const char *option1, const char *option2, const char *option3) 
+{
     int userAnswer;
 
     printf("%s\n", question);
@@ -15,39 +16,47 @@ int askQuestion(const char *question, const char *option1, const char *option2, 
 }
 
 // Function to check the user's answer
-int checkAnswer(int userAnswer, int correctAnswer) {
+int checkAnswer(int userAnswer, int correctAnswer) 
+{
     return userAnswer == correctAnswer;
 }
 
-int main() {
+int main() 
+{
     int score = 0;
 
     printf("Welcome to the Computer Science Quiz!\n");
 
     // Question 1
     int q1 = askQuestion("What does CPU stand for?", "Central Processing Unit", "Computer Personal Unit", "Central Processor Unit");
-    if (checkAnswer(q1, 1)) {
+    if (checkAnswer(q1, 1)) 
+	{
         printf("Correct!\n");
         score++;
-    } else {
+    } else 
+	{
         printf("Incorrect. The correct answer is Central Processing Unit.\n");
     }
 
     // Question 2
     int q2 = askQuestion("Which programming language is known for its simplicity and readability?", "C++", "Python", "Java");
-    if (checkAnswer(q2, 2)) {
+    if (checkAnswer(q2, 2)) 
+	{
         printf("Correct!\n");
         score++;
-    } else {
+    } else 
+	{
         printf("Incorrect. The correct answer is Python.\n");
     }
 
     // Question 3
     int q3 = askQuestion("What is the purpose of an operating system?", "Run applications", "Manage hardware resources", "Both A and B");
-    if (checkAnswer(q3, 3)) {
+    if (checkAnswer(q3, 3)) 
+	{
         printf("Correct!\n");
         score++;
-    } else {
+    } else 
+	{
         printf("Incorrect. The correct answer is Both A and B.\n");
     }
 
