@@ -1,6 +1,6 @@
-# CodeCraft C and C++
+# CPlusWorks
 
-Welcome to "Mastering C/C++" on GitHub! This repository is dedicated to sharing code and projects related to the C and C++ programming languages. Through curated projects and resources, we aim to provide examples and insights to help enthusiasts deepen their understanding and explore the capabilities of these powerful languages.
+Welcome to **CPlusWorks** on GitHub! This repository is dedicated to sharing code and projects related to the C and C++ programming languages. Through curated projects and resources, we aim to provide examples and insights to help enthusiasts deepen their understanding and explore the capabilities of these powerful languages.
 
 ## Overview
 
